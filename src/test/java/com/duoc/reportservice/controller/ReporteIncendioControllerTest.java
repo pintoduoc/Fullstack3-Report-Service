@@ -99,7 +99,7 @@ class ReporteIncendioControllerTest {
     @Test
     void testObtenerReportesPorEstado() throws Exception {
         Object[] fila = new Object[]{"PENDIENTE", 5L};
-        when(reporteIncendioService.obtenerReportesPorEstado()).thenReturn(Arrays.asList(fila));
+        when(reporteIncendioService.obtenerReportesPorEstado()).thenReturn(Arrays.<Object[]>asList(fila));
 
         mockMvc.perform(get("/api/reporte-incendio/group-by-estado"))
                 .andExpect(status().isOk());
